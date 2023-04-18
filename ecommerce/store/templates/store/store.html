@@ -1,21 +1,51 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<div class="row">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../../../static/images/watch_img.jpeg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../../../static/images/macbook_img.jpeg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../../../static/images/iphone_img.jpeg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="container">
+  <h1>Our Products</h1>
+  <div class="row">
 		{% for product in products %}
 		<div class="col-lg-4">
-			<img class="thumbnail" src="{{product.imageURL}}">
+		  <div class="product-img-container">
+		    <img class="thumbnail" src="{{product.imageURL}}">
+		  </div>
 			<div class="box-element product">
 				<h6><strong>{{product.name}}</strong></h6>
 				<hr>
 
 				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
 				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
 
 			</div>
 		</div>
 		{% endfor %}
 	</div>
+</div>
 
 {% endblock content %}
