@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 import json
 import datetime
 from .forms import CreateUserForm
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 
 def registerPage(request):
 	form = CreateUserForm()
@@ -28,7 +30,7 @@ def loginPage(request):
 		username = request.POST.get('username')
 		password = request.POST.get('password')
 		user = authenticate(request, username= username,password=password)
-		print(user)
+		#print(user)
 		if user is not None:
 			login(request, user)
 			return redirect('/')
@@ -136,6 +138,14 @@ def processOrder(request):
 		state = data['shipping']['state'],
 		zipcode = data['shipping']['zipcode'],
 		)
+		# #send order received mail
+		# mail_subject = "Thank you for shopping with us!"
+		# message = render_to_string('store/thankyou_for_order.html',{
+		# 	'order':order
+		# })
+		# to_mail = request.user.email
+		# send_email = EmailMessage(mail_subject, message, to = [to_mail])
+		# send_email.send()
 	else:
 		print('User is not logged in')
 
