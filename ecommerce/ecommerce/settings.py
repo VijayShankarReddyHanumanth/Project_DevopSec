@@ -25,9 +25,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['36490b8f72704b4ca77c6b6efa099cc5.vfs.cloud9.ca-central-1.amazonaws.com', '5232c1bc24aa4595b06bbc414b233caa.vfs.cloud9.us-east-2.amazonaws.com']
+#ALLOWED_HOSTS = ['5232c1bc24aa4595b06bbc414b233caa.vfs.cloud9.us-east-2.amazonaws.com', 'x22118608gadaelectronicstest-env.eba-mwyhdxab.us-east-2.elasticbeanstalk.com']
 
-
+ALLOWED_HOSTS =['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,6 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/images/'
 
