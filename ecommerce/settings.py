@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
 
 #ALLOWED_HOSTS = ['5232c1bc24aa4595b06bbc414b233caa.vfs.cloud9.us-east-2.amazonaws.com', 'x22118608gadaelectronicstest-env.eba-mwyhdxab.us-east-2.elasticbeanstalk.com']
 
