@@ -1,5 +1,0 @@
-Django==2.1.15
-django-admin-honeypot==1.1.0
-Pillow==9.5.0
-python-decouple==3.8
-pytz==2023.3
